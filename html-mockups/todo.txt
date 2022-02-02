@@ -1,0 +1,14 @@
+- what ARE we calling this?
+- figure out colors and style
+- fonts
+- scroll for the trending/new
+
+- page or place where they read what it means
+- about page
+
+- js for rating
+- hex chartings
+
+- media breakpoint stuff: 
+  --movies-per-row 
+- svg icon for search maybe? annoying but expected
