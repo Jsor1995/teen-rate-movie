@@ -2,6 +2,8 @@
 - figure out colors and style
 - fonts
 - scroll for the trending/new
+- need way to navigate once off the home page
+- trending/new on the bottom of movies or no?
 
 - page or place where they read what it means
 - about page
