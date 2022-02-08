@@ -11,9 +11,12 @@ load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 
-# Create your views here.
 def index(request):
     return render(request, "myapp/index.html")
+
+# Create your views here.
+def check(request):
+    return render(request, "myapp/check.html")
 
 #Pulling Movie Data from title
 def movie_pull(pk):

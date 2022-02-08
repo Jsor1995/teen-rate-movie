@@ -1,21 +1,67 @@
-<h1>Test Title</h1>
-<link rel="icon" href="data:,">
+<!doctype html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href='css/normalize.css'/>
+		<link rel="stylesheet" type="text/css" href='css/style.css'/>
+	</head>
+	<body>
+		<div class="row row-center" id="logo-header">
+			<img src="./images/crybaby bok choy.png"/>
+			<h1>Bok Choy - A Placeholder Name</h1>
+		</div>
 
-<h2 class="test"></h2>
-<script >
-    
-    async function testCall() {
-        console.log("functioning");
-        try {
-            const response = await fetch(`/test`);
-            const result = await response.json();
-            console.log(result);
-            document.getElementsByClassName("test").value = "Hello";
-        }
-        catch {
-            console.log("unable to call");
-        }
-        
-    };
-    window.onload = testCall;
-</script>
+		<div class="row row-center">
+			<div id="search">
+				<input type="text" placeholder="search"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<h2>Trending: </h2>
+			<ul class="movie-slider">
+				<li>
+					<a href="#">
+						<img src="./images/arbol.png"/>
+						<p>Arbol - The Devil Within</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/basil.png"/>
+						<p>Sweet Basil</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/cloves.png"/>
+						<p>Cinnabon Cloves</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="row">
+			<h2>New: </h2>
+			<ul class="movie-slider">
+				<li>
+					<a href="#">
+						<img src="./images/arbol.png"/>
+						<p>Arbol - The Devil Within</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/basil.png"/>
+						<p>Sweet Basil</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/cloves.png"/>
+						<p>Cinnabon Cloves</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
