@@ -1,0 +1,45 @@
+:root {
+  --padding: 20px;
+  --movies-per-row: 4;
+}
+
+.row {
+  max-width: 100%;
+  margin: var(--padding);
+}
+.row-center {
+  display: flex;
+  justify-content: center;
+}
+
+#logo-header {
+  text-align: center;
+  display: block;
+}
+
+#logo-header img {
+  min-width: 200px;
+}
+
+.movie-slider {
+  display: flex;
+  list-style: none;
+}
+.movie-slider li {
+  padding: var(--padding);
+}
+.movie-slider li img {
+  width: calc(100vw / var(--movies-per-row) - (2 + var(--movies-per-row)) * var(--padding));
+}
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  
+}
+.rating-container>div { 
+  width: 50%;
+  margin: var(--padding);
+}
+.rating-container img {
+  width: 100%;
+}
