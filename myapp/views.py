@@ -13,7 +13,6 @@ API_KEY = os.getenv("API_KEY")
 
 def index(request):
     context = { }
-    print(request)
     return render(request, "index.html", context)
 
 # Create your views here.

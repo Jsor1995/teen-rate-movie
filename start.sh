@@ -1,3 +1,3 @@
 #!/bin/sh
-source $(pipenv --venv)/bin/activate
+source env/bin/activate
 python manage.py runserver
