@@ -19,10 +19,12 @@ def check(request):
     return render(request, "myapp/check.html")
 
 #Pulling Movie Data from title
-def movie_pull(pk):
-    movie_data = requests.get(f'https://api.themoviedb.org/3/movie/{pk}?api_key={API_KEY}')
+def movie_pull(string, adultbool):
+
+    movie_data = requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&page=1&include_adult={adultbool}')
     return JsonResponse(movie_data.json())
 
+#Pulls Trending JSON
 def trending_pull(request):
     try:
         trend_data = requests.get(f'https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}')
