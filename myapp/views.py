@@ -19,8 +19,7 @@ def check(request):
     return render(request, "myapp/check.html")
 
 #Pulling Movie Data from title
-def movie_pull(string, adultbool):
-
+def movie_pull(adultbool):
     movie_data = requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&page=1&include_adult={adultbool}')
     return JsonResponse(movie_data.json())
 
@@ -31,4 +30,3 @@ def trending_pull(request):
     except:
         print("Error: Can't pull from API")
     return JsonResponse(trend_data.json())
-
