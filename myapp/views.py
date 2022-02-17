@@ -12,7 +12,9 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
 def index(request):
-    return render(request, "myapp/index.html")
+    context = { }
+    print(request)
+    return render(request, "index.html", context)
 
 # Create your views here.
 def check(request):
