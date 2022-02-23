@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponseRedirect, JsonResponse
 from django.http import HttpResponse
+from django.db.models import Avg
 from dotenv import load_dotenv
 from .models import MovieModel
 
@@ -31,11 +32,11 @@ def rating_pull(movie_data):
     try:
         movie_query = MovieModel.objects.filter(movie_id = movie_id)
         rating_data = {
-            "sex_rating": movie_query.sex_rating,
-            "gore_rating": movie_query.gore_rating,
-            "language_rating": movie_query.language_rating,
-            "religion_rating": movie_query.religion_rating,
-            "quality_rating": movie_query.quality_rating
+            "sex_rating": movie_query.aggregate(Avg('sex_rating')),
+            "gore_rating": movie_query.aggregate(Avg('gore_rating')),
+            "language_rating": movie_query.aggregate(Avg('language_rating')),
+            "religion_rating": movie_query.aggregate(Avg('religion_rating')),
+            "quality_rating": movie_query.aggregate(Avg('quality_rating'))
         }
     #if no model, create new model
     except: 
