@@ -38,6 +38,7 @@ def rating_pull(movie_data):
             "religion_rating": movie_query.aggregate(Avg('religion_rating')),
             "quality_rating": movie_query.aggregate(Avg('quality_rating'))
         }
+        print(rating_data)
     #if no model, create new model
     except: 
         print("Could Not Find Movie, Creating Entry")
