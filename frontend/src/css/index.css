@@ -1,8 +1,15 @@
+@font-face {
+  font-family: 'Garamond';
+  src: local('Garamond'), url(./fonts/Cormorant_Garamond/CormorantGaramond-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'SourceSerifPro';
+  src: local('Garamond'), url(./fonts/Source_Serif_Pro/SourceSerifPro-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Garamond", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
