@@ -23,8 +23,10 @@ def check(request):
 #Pulling Movie Data from title
 def movie_pull(request, movie_id):
     response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US')
-    ratings = rating_pull(response.json())
-    return JsonResponse(response.json())
+    movie_data = response.json()
+    ratings = rating_pull(movie_data)
+    movie_data.update(ratings)
+    return JsonResponse(movie_data)
 
 #Check internal models for movie ratings
 def rating_pull(movie_data):
