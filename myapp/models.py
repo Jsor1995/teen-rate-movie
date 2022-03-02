@@ -1,12 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-# Create your models here.
+from django.forms import ModelForm
 
-class User(AbstractUser):
-    pass
 class MovieModel(models.Model):
     title = models.CharField(max_length=200)
-    release_date = models.IntegerField()
-    movie_rating = models.CharField(max_length=3)
-    poster_image= models.ImageField(null=True)
-    
+    movie_id = models.CharField(max_length=20)
+    sex_rating = models.IntegerField(blank=True, null=True)
+    gore_rating = models.IntegerField(blank=True, null=True)
+    language_rating = models.IntegerField(blank=True, null=True)
+    religion_rating = models.IntegerField(blank=True, null=True)
+    quality_rating = models.IntegerField(blank=True, null=True)
+
+class MovieModelForm(ModelForm):
+    class Meta: 
+        model = MovieModel
+        fields = ['movie_id','sex_rating', 'gore_rating', 'language_rating', 'religion_rating', 'quality_rating']
