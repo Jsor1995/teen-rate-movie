@@ -1,12 +1,19 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Movie from './pages/Movie';
 
 const HomePage = () => {
-  return (
+  return (     
     <div>
-        <Home />
+      <Helmet>
+        <title>Cringecast - Home</title>
+      </Helmet>
+      <div>
+          <Home />
+      </div>
     </div>
   )
 };
@@ -15,15 +22,29 @@ const HomePage = () => {
 const AboutPage = () => {
   return (
     <div>
-      <p>About this</p>
+      <Helmet>
+        <title>Cringecast - About</title>
+      </Helmet>
+
+      <Navbar />
+      <div>
+          Abouts
+      </div>
     </div>
   )
 };
 
 const MoviePage = () => {
-  return (
+  return (    
     <div>
-        <Movie />
+      <Helmet>
+        <title>Cringecast - m</title>
+      </Helmet>
+
+      <Navbar />
+      <div>
+          <Movie />
+      </div>
     </div>
   )
 };

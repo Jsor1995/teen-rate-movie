@@ -6,20 +6,19 @@ import { BrowserRouter as Router, Routes, Route }
 import './css/index.css';
 import './css/normalize.css';
 
-import Navbar from './components/Navbar';
 import { HomePage, AboutPage, MoviePage } from './App'; 
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-    <Navbar />
       <Routes>
         <Route exact path='/' element={<HomePage />} />
         <Route exact path='/about' element={<AboutPage />} />
         <Route exact path='/movie/:movieID' element={<MoviePage />} />
       </Routes>
     </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
