@@ -1,0 +1,17 @@
+<h1>Test Title</h1>
+<link rel="icon" href="data:,">
+
+<script >
+    async function testCall() {
+        console.log("functioning");
+        try {
+            const response = await fetch(`movie/${550}`);
+            const result = await response.json();
+            console.log(result);
+        }
+        catch {
+            console.log("unable to call");
+        }
+    };
+    window.onload = testCall;
+</script>
