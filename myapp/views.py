@@ -26,6 +26,14 @@ def check(request):
 def movie_pull(request, movie_id):
     response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US')
     movie_data = response.json()
+        
+    print(movie_data["status_code"])
+    if movie_data["status_code"] == 7:
+        f = open('test.json', 'r')
+
+        movie_data = json.loads(f.read())
+
+
     # ratings = rating_pull(movie_data)
     # movie_data.update(ratings)
     return JsonResponse(movie_data)
