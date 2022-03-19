@@ -1,0 +1,33 @@
+Sen to Justin
+	Example of cleaned json made as test_cleaned.json
+
+	Please do some processing so the json sent at movies/ID is usable by the frontend
+		- Provide a FULL path to the image. Current json has relative paths of something hosted not by us. fix the url in backend, pass to frontend.
+		- Most the data is not used by the frontend, and shouldn't really be sent at all. 
+		- Current fields used by frontend: 
+			- poster - image url of poster. is base64 data of a donkey right now.
+			- overview - displayed summary
+			- title
+			- id - mainly for sanity while passing data around
+		- needs ratings to display and modify
+
+		- I left most the test-json-reading code in view.py unmodified, but learn to use the "with open('file_name.txt') as file:" syntax. I don't think it gets closed atm (perhaps not a problem when I'm reloading the server every 2 minutes, prolly will be at some point)
+
+		- endpoint - let frontend post a set of ratings
+			- this would be where you do ip verification as well, if we want to go that route
+		- endpoint - place/method to get the trending/new movies
+
+Sen to Sen
+	- actually make the movie page css
+	- figure out how to handle routing so that going straight to http://127.0.0.1:8000/show_movie/1 loads the react page AND goes straight to the movie page
+	- css
+		- movie page...
+		- css square the movie poster images, should be flexibler
+	- figure out which...things SHOULD be components vs functions and make them such
+	- refactor  
+		- indents, 
+		- movieslider.js
+		- states, I see I see
+	- search bar is ugly
+	- scrollbars
+	- later - possibly discuss how the bulk fetching is done?

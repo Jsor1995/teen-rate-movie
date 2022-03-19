@@ -15,7 +15,6 @@ API_KEY = os.getenv("API_KEY")
 
 def index(request):
     context = { }
-    print(request)
     return render(request, "index.html", context)
 
 # Create your views here.
@@ -30,7 +29,7 @@ def movie_pull(request, movie_id):
             
         print(movie_data["status_code"])
         if movie_data["status_code"] == 7:
-            f = open('test.json', 'r')
+            f = open('test_cleaned.json', 'r')
 
             movie_data = json.loads(f.read())
     except:
