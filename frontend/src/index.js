@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route }
-    from 'react-router-dom';
+import { 
+  BrowserRouter as Router, 
+  Routes, 
+  Route,
+  useParams
+ } from 'react-router-dom';
 
 import './css/index.css';
 import './css/normalize.css';
@@ -15,7 +19,7 @@ ReactDOM.render(
       <Routes>
         <Route exact path='/' element={<HomePage />} />
         <Route exact path='/about' element={<AboutPage />} />
-        <Route exact path='/movie/:movieID' element={<MoviePage />} />
+        <Route exact path='/show_movie/:movieID' element={<MoviePage />} />
       </Routes>
     </Router>
 

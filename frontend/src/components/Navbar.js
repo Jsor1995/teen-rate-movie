@@ -8,7 +8,6 @@ const Navbar = () => {
         <div>
           <span><Link to='/'>Home</Link></span>
           <span><Link to='/about'>About</Link></span>
-          <span><Link to='/movie/1'>Movie - ID = 1</Link></span>
           <span>
           <div id="search">
             <input type="text" placeholder="search"/>

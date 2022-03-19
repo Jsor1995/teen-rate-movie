@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.0282c480.css",
-    "main.js": "/static/js/main.c1ef0042.js",
+    "main.js": "/static/js/main.f5a7d13d.js",
     "static/media/CormorantGaramond-Light.ttf": "/static/media/CormorantGaramond-Light.b96f44491c2dcc16ddc7.ttf",
     "static/media/SourceSerifPro-Regular.ttf": "/static/media/SourceSerifPro-Regular.6f22301c30206f4bad62.ttf",
     "index.html": "/index.html",
     "main.0282c480.css.map": "/static/css/main.0282c480.css.map",
-    "main.c1ef0042.js.map": "/static/js/main.c1ef0042.js.map"
+    "main.f5a7d13d.js.map": "/static/js/main.f5a7d13d.js.map"
   },
   "entrypoints": [
     "static/css/main.0282c480.css",
-    "static/js/main.c1ef0042.js"
+    "static/js/main.f5a7d13d.js"
   ]
 }

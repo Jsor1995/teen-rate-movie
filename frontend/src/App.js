@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Movie from './pages/Movie';
+
+import { 
+  useParams
+ } from 'react-router-dom';
 
 const HomePage = () => {
   return (     
@@ -34,19 +38,23 @@ const AboutPage = () => {
   )
 };
 
-const MoviePage = () => {
-  return (    
-    <div>
-      <Helmet>
-        <title>Cringecast - m</title>
-      </Helmet>
-
-      <Navbar />
+const MoviePage  = () => {
+    let { movieID } = useParams();
+    return (    
       <div>
-          <Movie />
+        <Helmet>
+          <title>Cringecast - m</title>
+        </Helmet>
+
+        <Navbar />
+        <div>
+
+
+        <Movie id={ movieID }/>
+
+        </div>
       </div>
-    </div>
-  )
-};
+    )
+}
 
 export { HomePage, AboutPage, MoviePage } ;
