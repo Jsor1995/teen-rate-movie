@@ -28,10 +28,9 @@ def movie_pull(request, movie_id):
         response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US')
         movie_data = response.json()
             
-        print(movie_data["status_code"])
+        #if access code not available release test json
         if movie_data["status_code"] == 7:
             f = open('test.json', 'r')
-
             movie_data = json.loads(f.read())
     except:
         movie_data = {'success':'false'}
@@ -42,15 +41,20 @@ def movie_pull(request, movie_id):
 
 #Check internal models for movie ratings
 def rating_pull(movie_data):
-    movie_id = movie_data.id
+    #movie_id = movie_data.id
     try:
-        movie_query = MovieModel.objects.filter(movie_id = movie_id)
+        #movie_query = MovieModel.objects.filter(movie_id = movie_id)
         rating_data = {
-            "sex_rating": movie_query.aggregate(Avg('sex_rating')),
-            "gore_rating": movie_query.aggregate(Avg('gore_rating')),
-            "language_rating": movie_query.aggregate(Avg('language_rating')),
-            "religion_rating": movie_query.aggregate(Avg('religion_rating')),
-            "quality_rating": movie_query.aggregate(Avg('quality_rating'))
+            "sex_rating": 0,
+            "gore_rating": 0,
+            "language_rating": 0,
+            "religion_rating":0,
+            "quality_rating":0
+            # "sex_rating": movie_query.aggregate(Avg('sex_rating')),
+            # "gore_rating": movie_query.aggregate(Avg('gore_rating')),
+            # "language_rating": movie_query.aggregate(Avg('language_rating')),
+            # "religion_rating": movie_query.aggregate(Avg('religion_rating')),
+            # "quality_rating": movie_query.aggregate(Avg('quality_rating'))
         }
         print(rating_data)
     #if no model, create new model
