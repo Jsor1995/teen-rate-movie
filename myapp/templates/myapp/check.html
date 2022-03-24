@@ -1,7 +1,7 @@
 <h1>Test Title</h1>
 <link rel="icon" href="data:,">
 
-<script >
+<script>
     async function testCall() {
         console.log("functioning");
         try {
@@ -9,7 +9,8 @@
             const result = await response.json();
             console.log(result);
         }
-        catch {
+        catch(err) {
+            console.log(err)
             console.log("unable to call");
         }
     };

@@ -26,13 +26,14 @@ def movie_pull(request, movie_id):
     try : 
         response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US')
         movie_data = response.json()
-            
-        print(movie_data["status_code"])
-        if movie_data["status_code"] == 7:
-            f = open('test_cleaned.json', 'r')
-
-            movie_data = json.loads(f.read())
-    except:
+        print(type(movie_data))
+        #print(movie_data)     
+        if "status_code" in movie_data:
+            if movie_data["status_code"] == 7:
+                print("test code entry")
+                with open("test.json") as file:
+                    movie_data = file.read()
+    except TypeError:
         movie_data = {'success':'false'}
 
     # ratings = rating_pull(movie_data)
@@ -68,3 +69,11 @@ def trending_pull(request):
     except:
         print("Error: Can't pull from API")
     return JsonResponse(trend_data.json())
+
+def clean_data(movie_data):
+    new_data = {
+        "poster": "test",
+        "overview": movie_data["overview"],
+        "title": movie_data["title"],
+        "id": movie_data["id"]
+    }
